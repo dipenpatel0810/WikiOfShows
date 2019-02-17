@@ -5,9 +5,7 @@ export default class Myshow extends React.Component {
     constructor(props) {
         super(props);
         this.imageService = new ImageService();
-        this.state = ({
-
-        })
+        this.state = ({})
 
     }
 
@@ -50,6 +48,17 @@ export default class Myshow extends React.Component {
                                  {this.state.show.summary}
                                  <br/>
                                  Rating : {this.state.show.rating.average}
+                                 <br/>
+                                 {
+                                     this.state.show.genres.map((genre) =>
+                                                                    <div>
+                                                                        <ul className={"nav nav-pills"}></ul>
+                                                                        <li>
+                                                                            {genre}
+                                                                        </li>
+                                                                    </div>
+                                     )
+                                 }
                              </div>
                          </div>
                      </div>}
