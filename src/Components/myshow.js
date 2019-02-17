@@ -6,7 +6,7 @@ export default class Myshow extends React.Component {
         super(props);
         this.imageService = new ImageService();
         this.state = ({
-            imageSource: ''
+
         })
 
     }
@@ -14,10 +14,14 @@ export default class Myshow extends React.Component {
     getShowName = (event) => {
         this.setState({
                           imageSource: event.target.value
-                      })
+                      });
+        this.imageService.getImage(event.target.value);
     };
     showMyImage = () => {
-        this.imageService.getImage(this.state.imageSource)
+        let show = this.imageService.printShow();
+        this.setState({
+                          show: show
+                      })
     };
 
     render() {
@@ -25,18 +29,30 @@ export default class Myshow extends React.Component {
             <div>
                 <div className={"container-fluid"}>
                     <div className={"jumbotron"}>
-                        <h1>My App!</h1>
+                        <h1>Showtime!</h1>
                     </div>
                     <div className={"container-fluid row"}>
                         <input className={"form-control col-10"} placeholder={"Search"}
                                onChange={this.getShowName}/>
                         <button className={"btn btn-primary col-2"}
-                                onClick={this.showMyImage}>Go!
+                                onClick={this.showMyImage}
+                                type={"button"}>Go!
                         </button>
                     </div>
-                    <div className={"my-5"}>
-                        <img src={this.state.imageSource}/>
-                    </div>
+                    {this.state.show != undefined &&
+                     <div className={"container-fluid my-5"}>
+                         <h1>{this.state.show.name}</h1>
+                         <div className={"row"}>
+                             <div className={"col-6 my-5"}>
+                                 <img src={this.state.show.image.medium}/>
+                             </div>
+                             <div className={"col-6"}>
+                                 {this.state.show.summary}
+                                 <br/>
+                                 Rating : {this.state.show.rating.average}
+                             </div>
+                         </div>
+                     </div>}
                 </div>
             </div>
         );

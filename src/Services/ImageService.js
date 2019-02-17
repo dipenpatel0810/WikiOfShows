@@ -1,12 +1,19 @@
 import React from 'react';
 
-const imageUrl = 'https://api.tvmaze.com/search/shows?q='
+const imageUrl = 'https://api.tvmaze.com/search/shows?q=';
+var show = {};
 export default class ImageService extends React.Component {
 
     getImage = (showName) => {
-        fetch(imageUrl + showName).then(response => {
-            console.log(response);
-            return response.json();
-        })
+        fetch(imageUrl + showName).then(response => response.json()).then(
+            data => {
+                console.log(data[0].show);
+                this.show = data[0].show;
+                return data[0].show}
+        )
+    }
+
+    printShow = () =>{
+        return this.show;
     }
 }
