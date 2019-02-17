@@ -5,10 +5,14 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
+    "query-string": "^6.2.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-player": "^1.9.3",
+    "react-query-params": "^1.0.9",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "react-youtube": "^7.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
