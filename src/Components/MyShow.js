@@ -28,7 +28,7 @@ export default class MyShow extends React.Component {
             <div>
                 <div className={"container-fluid"}>
                     <div className={"jumbotron"}>
-                        <h1>Showtime!</h1>
+                        <h1>Wiki of Shows</h1>
                     </div>
                     <div className={"container-fluid row"}>
                         <input className={"form-control col-10"} placeholder={"Search"}
@@ -56,13 +56,17 @@ export default class MyShow extends React.Component {
                                             <div>
                                                 <div dangerouslySetInnerHTML={{ __html: array.show.summary }} />
                                                 <br/>
+                                                Premiered : {array.show.premiered}
+                                                <br/>
+                                                Language : {array.show.language}
+                                                <br/>
                                                 Rating : {array.show.rating.average}
                                                 <br/>
                                                 {
                                                     array.show.genres.map((genre) =>
                                                                               <div>
                                                                                   <ul className={"nav nav-pills"}></ul>
-                                                                                  <li>
+                                                                                  <li className={"nav-item"}>
                                                                                       {genre}
                                                                                   </li>
                                                                               </div>
