@@ -66,4 +66,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# myShow
+# Wiki of Shows.
+
+I used React, a library of JavaScript in front end.
+I use 2 API for the details of Shows and Movies.
+
+1) OMDB Api
+2) TV maze API
+
+
